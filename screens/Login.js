@@ -52,7 +52,7 @@ const Login = ({ navigation }) => {
                         initialValues={{email: '', password: ''}}
                         onSubmit={(values) => {
                             console.log(values);
-                            navigation.navigate("Welcome");
+                            navigation.navigate("Početna");
                         }}
                     >{ ({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
                             <MyTextInput 

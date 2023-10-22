@@ -35,8 +35,8 @@ export default function App() {
         <Stack.Screen name="Root" component={Root} 
         options={{ headerShown: false }} />
         <Stack.Screen options={{
-          title: 'Welcome'
-        }} name="Welcome" component={Welcome} />
+          title: 'Početna'
+        }} name="Početna" component={Welcome} />
       </Stack.Navigator>
 
     </NavigationContainer>
