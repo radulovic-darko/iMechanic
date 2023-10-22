@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-export default function App() {
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import { NavigationContainer } from '@react-navigation/native';
+
+//screens
+import Login from './screens/Login';
+import Welcome from './screens/Welcome';
+import Interventions from './screens/Interventions';
+import Registrations from './screens/Registrations';
+import Services from './screens/Services';
+
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
+{/* Add Drawer.Navigation to a function.*/}
+function Root() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Drawer.Navigator >
+      <Drawer.Screen name="Početna" component={Welcome} />
+      <Drawer.Screen name="Registracije" component={Registrations} />
+      <Drawer.Screen name="Servisi" component={Services} />
+      <Drawer.Screen name="Intervencije" component={Interventions} />
+      <Drawer.Screen name="Odjavi se" component={Login} options={{ headerShown: false }} />
+    </Drawer.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator >
+        <Stack.Screen name="Root" component={Root} 
+        options={{ headerShown: false }} />
+        <Stack.Screen options={{
+          title: 'Welcome'
+        }} name="Welcome" component={Welcome} />
+      </Stack.Navigator>
+
+    </NavigationContainer>
+  );
+}
