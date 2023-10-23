@@ -18,7 +18,7 @@ const Stack = createStackNavigator();
 {/* Add Drawer.Navigation to a function.*/}
 function Root() {
   return (
-    <Drawer.Navigator >
+    <Drawer.Navigator initialRouteName='Odjavi se' >
       <Drawer.Screen name="Početna" component={Welcome} />
       <Drawer.Screen name="Registracije" component={Registrations} />
       <Drawer.Screen name="Servisi" component={Services} />
@@ -34,11 +34,7 @@ export default function App() {
       <Stack.Navigator >
         <Stack.Screen name="Root" component={Root} 
         options={{ headerShown: false }} />
-        <Stack.Screen options={{
-          title: 'Početna'
-        }} name="Početna" component={Welcome} />
       </Stack.Navigator>
-
     </NavigationContainer>
   );
 }
