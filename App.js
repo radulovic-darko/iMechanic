@@ -23,7 +23,7 @@ function Root() {
       <Drawer.Screen name="Registracije" component={Registrations} />
       <Drawer.Screen name="Servisi" component={Services} />
       <Drawer.Screen name="Intervencije" component={Interventions} />
-      <Drawer.Screen name="Odjavi se" component={Login} options={{ headerShown: false }} />
+      <Drawer.Screen name="Odjavi se" component={Login} options={{ headerShown: false, swipeEnabled: false  }} />
     </Drawer.Navigator>
   );
 }
