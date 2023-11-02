@@ -64,6 +64,7 @@ const Login = ({ navigation }) => {
                                 onBlur={handleBlur('email')}
                                 values={values.email}
                                 keyboardType="email-address"
+                                iconSize={30}
                             />
                             <MyTextInput 
                                 label="Password"
@@ -77,6 +78,7 @@ const Login = ({ navigation }) => {
                                 isPassword={true}
                                 hidePassword={hidePassword}
                                 setHidePassword={setHidePassword}
+                                iconSize={30}
                             />
                             <MessageBox></MessageBox>
                             <StyledButton onPress={handleSubmit}>
@@ -101,11 +103,11 @@ const Login = ({ navigation }) => {
     );
 };
 
-const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ...props}) => {
+export const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, iconSize, ...props}) => {
     return (
         <View>
             <LeftIcon>
-                <Octicons name={icon} size={30} color={brand} />
+                <Octicons name={icon} size={iconSize} color={brand} />
             </LeftIcon>
             <StyledInputLabel>{label}</StyledInputLabel>
             <StyledTextInput {...props} />

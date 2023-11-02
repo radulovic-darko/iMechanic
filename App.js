@@ -11,6 +11,7 @@ import Welcome from './screens/Welcome';
 import Interventions from './screens/Interventions';
 import Registrations from './screens/Registrations';
 import Services from './screens/Services';
+import CreateRegistration from './screens/CreateRegistration';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -24,6 +25,7 @@ function Root() {
       <Drawer.Screen name="Servisi" component={Services} />
       <Drawer.Screen name="Intervencije" component={Interventions} />
       <Drawer.Screen name="Odjavi se" component={Login} options={{ headerShown: false, swipeEnabled: false  }} />
+      <Drawer.Screen name="Nova registracija" component={CreateRegistration} />
     </Drawer.Navigator>
   );
 }
